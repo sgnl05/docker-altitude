@@ -19,6 +19,7 @@ then
   if [ -x $installer ] 
   then
     expect <<EOD
+set timeout -1
 spawn sudo $installer -c
 expect "Where should Altitude be installed?"
 send "${target}\n"
