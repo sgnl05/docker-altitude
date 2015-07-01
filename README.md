@@ -41,6 +41,10 @@ image name which is `sgnl05/altitude:latest`.
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
 
+### Credits
+
+Code is based on [docker-minecraft][2] by Isaac Bythewood.
 
 [0]: http://www.docker.io/gettingstarted/
 [1]: http://altitudegame.com/
+[2]: https://github.com/overshard/docker-minecraft
