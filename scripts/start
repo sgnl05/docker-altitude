@@ -46,13 +46,14 @@ EOD
 fi
 
 # Start server
-if [ -x ${target}/server_launcher ]
-then
-  until ${target}/server_launcher; do
-    echo "Altitude server stopped with exit code $?.  Respawning.." >&2
-    sleep 1
-  done
-else
-  echo "ERROR: ${target}/server_launcher not found"
-  exit 1
-fi
+while true
+do
+  if [ -x ${target}/server_launcher ]
+  then
+    ${target}/server_launcher
+  else
+    echo "ERROR: ${target}/server_launcher not found or not executable"
+    exit 1
+  fi
+  sleep 1
+done
