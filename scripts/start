@@ -1,0 +1,39 @@
+#!/bin/bash
+
+installer="/data/altitude.sh"
+target="/data/altitude"
+
+if [ ! -f $installer ]
+then
+  curl "http://installer.altitudegame.com/0.0.1/altitude.sh" -o $installer
+fi
+
+if [ ! -x $installer ]
+then
+  chmod a+rx $installer
+fi
+
+if [ ! -d $target ]
+then
+  expect <<EOD
+spawn sudo $installer -c
+expect "Where should Altitude be installed?"
+send "${target}\n"
+expect "Create symlinks?"
+send "y\n"
+expect "Select the folder where you would like Altitude to create symlinks, then click Next."
+send "\n"
+expect "Create a desktop icon?"
+send "n\n"
+expect "Run Altitude?"
+send "n\n"
+expect "Finishing installation..."
+exit 0
+EOD
+fi
+
+# Start server
+until ${target}/server_launcher; do
+  echo "Altitude server stopped with exit code $?.  Respawning.." >&2
+  sleep 1
+done
