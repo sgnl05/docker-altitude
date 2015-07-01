@@ -13,9 +13,12 @@ then
   chmod a+rx $installer
 fi
 
+
 if [ ! -d $target ]
 then
-  expect <<EOD
+  if [ -x $installer ] 
+  then
+    expect <<EOD
 spawn sudo $installer -c
 expect "Where should Altitude be installed?"
 send "${target}\n"
@@ -30,10 +33,25 @@ send "n\n"
 expect "Finishing installation..."
 exit 0
 EOD
+  else
+    if [ -f $installer ]
+    then
+      echo "ERROR: ${installer} not executable"
+      exit 1
+    else
+      echo "ERROR: ${installer} not found"
+    fi
+  fi
 fi
 
 # Start server
-until ${target}/server_launcher; do
-  echo "Altitude server stopped with exit code $?.  Respawning.." >&2
-  sleep 1
-done
+if [ -x ${target}/server_launcher ]
+then
+  until ${target}/server_launcher; do
+    echo "Altitude server stopped with exit code $?.  Respawning.." >&2
+    sleep 1
+  done
+else
+  echo "ERROR: ${target}/server_launcher not found"
+  exit 1
+fi

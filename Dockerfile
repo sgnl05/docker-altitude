@@ -2,7 +2,7 @@
 #
 # docker-altitude
 #
-# Builds a basic docker imagethatcan run an Altitudeserver (http://altitudegame.com/).
+# Builds a basic docker image that can run an Altitude server (http://altitudegame.com/).
 #
 # Authors: Gjermund Jensvoll
 # Code based on docker-minecraft by Isaac Bythewood (https://github.com/overshard/docker-minecraft)
