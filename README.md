@@ -23,7 +23,7 @@ system you can map the udp ports to 27275 27276 and no proxy is needed. i.e.
 Also be sure your mounted directory on your host machine is
 already created before running `mkdir -p /mnt/altitude`.
 
-    sudo docker run -d=true -p=25565:25565 -v=/mnt/altitude:/data sgnl05/altitude
+    sudo docker run -d=true -p=27275:27275/udp -p=27276:27276/udp -v=/mnt/altitude:/data sgnl05/altitude
 
 From now on when you start/stop docker-altitude you should use the container id
 with the following commands. To get your container id, after you initial run
