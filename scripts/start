@@ -1,19 +1,22 @@
 #!/bin/bash
 
+# Define locations
 installer="/data/altitude.sh"
 target="/data/altitude"
 
+# Get installer file
 if [ ! -f $installer ]
 then
   curl "http://installer.altitudegame.com/0.0.1/altitude.sh" -o $installer
 fi
 
+# Make it read-/executable
 if [ ! -x $installer ]
 then
   chmod a+rx $installer
 fi
 
-
+# Run installer and use "expect" to answer questions.
 if [ ! -d $target ]
 then
   if [ -x $installer ] 
