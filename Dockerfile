@@ -15,8 +15,8 @@ FROM ubuntu:14.04
 ENV    DEBIAN_FRONTEND noninteractive
 
 # Download and install everything from the repos.
-RUN    apt-get --yes update; apt-get --yes upgrade
-RUN    apt-get --yes install openjdk-6-jre lib32gcc1 expect curl
+RUN    apt-get update; apt-get -y upgrade
+RUN    apt-get -y install openjdk-6-jre lib32gcc1 expect curl
 
 # Load scripts.
 ADD    ./scripts/start /start
