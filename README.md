@@ -9,10 +9,11 @@ For more information on Altitude and check out it's [website][1].
 
 Running this will build you a docker image with the latest version of docker-altitude..
 
-    git clone https://github.com/sgnl05/docker-altitude
-    cd docker-altitude
-    sudo docker build -t sgnl05/altitude .
-
+```bash
+git clone https://github.com/sgnl05/docker-altitude
+cd docker-altitude
+docker build -t sgnl05/altitude .
+```
 
 ## Running docker-altitude
 
@@ -23,19 +24,21 @@ system you can map the udp ports to 27275 27276 and no proxy is needed. i.e.
 Also be sure your mounted directory on your host machine is
 already created before running `mkdir -p /mnt/altitude`.
 
-    sudo docker run -d=true -p=27275:27275/udp -p=27276:27276/udp -v=/mnt/altitude:/data sgnl05/altitude
+```bash
+docker run --name=altitude -d=true -p=27275:27275/udp -p=27276:27276/udp -v=/mnt/altitude:/data sgnl05/altitude
+```
 
-From now on when you start/stop docker-altitude you should use the container id
-with the following commands. To get your container id, after you initial run
-type `sudo docker ps` and it will show up on the left side followed by the
-image name which is `sgnl05/altitude:latest`.
+From now on when you start/stop docker-altitude you should use the container name 
+with the following commands. If you havent specified a name then Docker will generate one for you. To get your container name, after you initial run type `sudo docker ps` and it will show up on the right side side.
 
-    sudo docker start <container_id>
-    sudo docker stop <container_id>
-
+```bash
+docker start <NAME>
+docker stop <NAME>
+```
 
 ### Notes on the run command
 
+ + `--name` is the container name. Set this to whatever single word you want.
  + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
  + `sgnl05/altitude` is simply what I called my docker build of this image
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
