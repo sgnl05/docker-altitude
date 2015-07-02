@@ -49,14 +49,10 @@ EOD
 fi
 
 # Start server
-while true
-do
-  if [ -x ${target}/server_launcher ]
-  then
-    ${target}/server_launcher
-  else
-    echo "ERROR: ${target}/server_launcher not found or not executable"
-    exit 1
-  fi
-  sleep 1
-done
+if [ -x ${target}/server_launcher ]
+then
+  ${target}/server_launcher
+else
+  echo "ERROR: ${target}/server_launcher not found or not executable"
+  exit 1
+fi
