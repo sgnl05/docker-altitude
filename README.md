@@ -39,9 +39,9 @@ docker stop <NAME>
 ### Notes on the run command
 
  + `--name` is the container name. Set this to whatever single word you want.
- + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
- + `sgnl05/altitude` is simply what I called my docker build of this image
- + `-d=true` allows this to run cleanly as a daemon, remove for debugging
+ + `-v` is the volume you are mounting `-v=host_dir:docker_dir`.
+ + `sgnl05/altitude` is simply what I called my docker build of this image.
+ + `-d=true` allows this to run cleanly as a daemon, remove for debugging or when you use systemd.
  + `-p` is the port(s) it connects to, `-p=host_port:docker_port`. Use "-" to define a range.
 
 ### Credits
