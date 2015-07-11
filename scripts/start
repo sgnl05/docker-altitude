@@ -46,6 +46,14 @@ EOD
       echo "ERROR: ${installer} not found"
     fi
   fi
+  
+  # Make servers directory
+  mkdir "${target}/servers"
+  chmod 755 "${target}/servers"
+
+  # Now download launcher_config.xml
+  curl "https://raw.githubusercontent.com/sgnl05/docker-altitude/master/serverconfigs/$(hostname -s).xml" -o ${target}/servers/launcher_config.xml
+  
 fi
 
 # Start server
