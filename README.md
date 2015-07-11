@@ -24,7 +24,7 @@ system you can map the udp port range to 27275-27276 and no proxy is needed. i.e
 
 
 ```bash
-docker run --name=altitude -h=altitude01 -d=true -p=27275-27276:27275-27276/udp sgnl05/altitude
+docker run --name=altitude -h=altitude01 -p=27275-27276:27275-27276/udp sgnl05/altitude
 ```
 
 From now on when you start/stop docker-altitude you should use the container name 
@@ -40,7 +40,6 @@ docker stop <NAME>
  + `--name` is the container name. Set this to whatever single word you want.
  + `-h` is the hostname of your choise. The hostname is used for pulling the server config.
  + `sgnl05/altitude` is simply what I called my docker build of this image.
- + `-d=true` allows this to run cleanly as a daemon, remove for debugging or when you use systemd.
  + `-p` is the port(s) it connects to, `-p=host_port:docker_port`. Use "-" to define a range.
 
 ### Credits
