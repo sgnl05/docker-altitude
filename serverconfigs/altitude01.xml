@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ServerLauncherConfig ip="" upnpEnabled="false" updatePort="27275">
   <servers>
-    <AltitudeServerConfig port="27276" downloadMaxKilobytesPerSecond="40" downloadHttpSource="" serverName="Lebon's football server #4" maxPlayerCount="14" hardcore="true" autoBalanceTeams="true" preventTeamSwitching="false" disableBalanceTeamsPopup="false" lanServer="false" callEndOfRoundVote="false" disallowDemoUsers="false" rconEnabled="false" rconPassword="" maxPing="200" minLevel="0" maxLevel="0" secretCode="" cameraViewScalePercent="100">
+    <AltitudeServerConfig port="27276" downloadMaxKilobytesPerSecond="40" downloadHttpSource="" serverName="Lebon's football server #1" maxPlayerCount="14" hardcore="true" autoBalanceTeams="true" preventTeamSwitching="false" disableBalanceTeamsPopup="false" lanServer="false" callEndOfRoundVote="false" disallowDemoUsers="false" rconEnabled="false" rconPassword="" maxPing="200" minLevel="0" maxLevel="0" secretCode="" cameraViewScalePercent="100">
       <adminsByVaporID>
         <UUID UUID="1dce748e-e468-43e5-a96c-fbe300467066" />
         <UUID UUID="81a6955a-b619-49be-8914-d57b88e259dd" />
