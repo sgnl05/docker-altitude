@@ -20,12 +20,11 @@ docker build -t sgnl05/altitude .
 Running the first time will set your ports to static ports of your choice so
 that you can easily map a proxy to them. If this is the only thing running on your
 system you can map the udp port range to 27275-27276 and no proxy is needed. i.e.
-`-p=27275-27276:27275-27276/udp` .
-Also be sure your mounted directory on your host machine is
-already created before running `mkdir -p /mnt/altitude`.
+`-p=27275-27276:27275-27276/udp`. Server config will be downloaded from the serverconfigs folder. File name is based on what hostname you choose with the `-h` flag.
+
 
 ```bash
-docker run --name=altitude -d=true -p=27275-27276:27275-27276/udp -v=/mnt/altitude:/data sgnl05/altitude
+docker run --name=altitude -h=altitude01 -d=true -p=27275-27276:27275-27276/udp sgnl05/altitude
 ```
 
 From now on when you start/stop docker-altitude you should use the container name 
@@ -39,7 +38,7 @@ docker stop <NAME>
 ### Notes on the run command
 
  + `--name` is the container name. Set this to whatever single word you want.
- + `-v` is the volume you are mounting `-v=host_dir:docker_dir`.
+ + `-h` is the hostname of your choise. The hostname is used for pulling the server config.
  + `sgnl05/altitude` is simply what I called my docker build of this image.
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging or when you use systemd.
  + `-p` is the port(s) it connects to, `-p=host_port:docker_port`. Use "-" to define a range.
