@@ -38,7 +38,7 @@ docker stop <NAME>
 ### Notes on the run command
 
  + `--name` is the container name. Set this to whatever single word you want.
- + `-h` is the hostname of your choise. The hostname is used for pulling the server config.
+ + `-h` is the hostname of your choice. The hostname is used for pulling the server config.
  + `sgnl05/altitude` is simply what I called my docker build of this image.
  + `-p` is the port(s) it connects to, `-p=host_port:docker_port`. Use "-" to define a range.
 
