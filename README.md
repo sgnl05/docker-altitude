@@ -2,7 +2,7 @@
 
 A nice and easy way to get an Altitude server up and running using Docker. For
 help on getting started with Docker see the [official getting started guide][0].
-For more information on Altitude and check out it's [website][1].
+For more information on Altitude and check out its [website][1].
 
 
 ## Building docker-altitude
