@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ServerLauncherConfig ip="" upnpEnabled="false" updatePort="27275">
   <servers>
-    <AltitudeServerConfig port="27276" downloadMaxKilobytesPerSecond="40" downloadHttpSource="" serverName="[-fu]" maxPlayerCount="60" hardcore="true" autoBalanceTeams="false" preventTeamSwitching="false" disableBalanceTeamsPopup="false" lanServer="false" callEndOfRoundVote="false" disallowDemoUsers="false" rconEnabled="false" rconPassword="" maxPing="300" minLevel="0" maxLevel="0" secretCode="" cameraViewScalePercent="100">
+    <AltitudeServerConfig port="27276" downloadMaxKilobytesPerSecond="40" downloadHttpSource="" serverName="[-fu] ball server" maxPlayerCount="60" hardcore="true" autoBalanceTeams="false" preventTeamSwitching="false" disableBalanceTeamsPopup="false" lanServer="false" callEndOfRoundVote="false" disallowDemoUsers="false" rconEnabled="false" rconPassword="" maxPing="300" minLevel="0" maxLevel="0" secretCode="" cameraViewScalePercent="100">
       <adminsByVaporID>
         <UUID UUID="1dce748e-e468-43e5-a96c-fbe300467066" />
 	<UUID UUID="febd13c0-2124-4495-9c13-bff81f11421a" />
@@ -20,7 +20,7 @@
       <mapRotationList>
         <String value="|ball|" />
       </mapRotationList>
-      <BotConfig />
+      <BotConfig numberOfBots="0" botDifficulty="MEDIUM" botsBalanceTeams="true" botSpectateThreshold="0" />
       <disallowedPlaneRandomTypes />
       <FreeForAllGameMode scoreLimit="0" RoundLimit="1" roundTimeSeconds="420" warmupTimeSeconds="10" />
       <BaseDestroyGameMode RoundLimit="1" roundTimeSeconds="0" warmupTimeSeconds="10" />
